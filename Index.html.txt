@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Sign In</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<style>
+:root {
+  --primary: #0a66c2;
+  --border: #d0d5dd;
+  --bg: #f9fafb;
+  --text: #101828;
+  --error: #d92d20;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+header {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background: #fff;
+  width: 100%;
+  max-width: 380px;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: 24px;
+  color: var(--text);
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.95;
+}
+
+.error {
+  color: var(--error);
+  font-size: 14px;
+  margin-top: 10px;
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  color: #667085;
+}
+</style>
+</head>
+
+<body>
+
+<header aria-hidden="true">
+  Company Name
+</header>
+
+<main>
+  <div class="login-container">
+    <h1>Sign in</h1>
+
+    <label for="email">Email address</label>
+    <input type="email" id="email" placeholder="you@example.com">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="••••••••">
+
+    <button onclick="login()">Sign in</button>
+
+    <div id="error" class="error">Invalid email or password</div>
+  </div>
+</main>
+
+<footer>
+  © 2026 Company. All rights reserved.
+</footer>
+
+<script>
+function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const error = document.getElementById("error");
+
+  error.style.display = "none";
+
+  // FRONTEND-ONLY DEMO LOGIC
+  if (email === "test@example.com" && password === "password123") {
+    alert("Login successful (demo)");
+  } else {
+    error.style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
